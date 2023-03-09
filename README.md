@@ -1,1 +1,1 @@
-task0 creating a script that switchws the current user to the user betty
+creating a script that switches the current user to the user betty
