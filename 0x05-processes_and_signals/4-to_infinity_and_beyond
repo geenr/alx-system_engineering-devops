@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#echoes To infinity and beyond indefinitely with
+#a sleep 2 in between each iteration.
+#the sleep keyword is used to just pause for sometime
+
+while true
+do
+  echo "To infinity and beyond"
+  sleep 2
+done
