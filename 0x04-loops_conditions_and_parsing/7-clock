@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#echoes the time for 12 horus and 59 minutes.
+#echoes hours(i) from 0 to 12
+#echoes minutes(b) from 1 to 59
+#the head command limits the number of hours to display
+
+i=0
+
+while [ $i -le 12 ]
+do
+  echo "Hour: $i"
+  b=1
+  while [ $b -le 59 ]
+  do
+    echo "$b"
+    (( b++ ))
+  done
+  (( i++ ))
+done
