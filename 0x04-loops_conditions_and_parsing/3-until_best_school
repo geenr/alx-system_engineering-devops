@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#this echoes Best School using until
+
+i=0
+
+until [ $i -ge 10 ];
+do
+	echo "Best School"
+	i=$((i+1))
+done
