@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Displays lines containing the bash keyword.
+#pgrep is not allowed
+#shellcheck disable=SC2009
+
+ps -aux | grep bash
