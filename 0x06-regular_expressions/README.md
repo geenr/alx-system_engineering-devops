@@ -1,6 +1,64 @@
 REGULAR EXPRESSION
 this involves a matching concept majorly used in password matching
-[200~
+REGULAR EXPRESSION
+https://web.archive.org/web/20090207140349/http://immike.net/blog/2007/04/06/5-regular-expressions-every-web-programmer-should-know/
+
+metacharacter 
+"."
+when inside the character class eg [schoo.l]
+when outside the character class eg [school].
+NB the full stop will only accomodate one character
+"^"
+show should begin with eg ^shawn meaning must begin with s
+when inside the character class this means not including or except eg [^a] meaning except a
+
+"-"
+when inside a character class eg [0-9] means any number between 0 and 9
+when outside the character class eg -[0-9]
+"?"Matching Optional Items: ‘?’
+The ‘?’ metacharacter (question mark) means optional. It is placed after a character that is allowed, but not required, at a certain point in an expression. The question mark attaches only to the immediately preceding character.
+
+If I wanted to match the english or american versions of the word ‘flavor’ I could use the regex flavou?r, which is interpreted as “f, followed by l, followed by a, followed by v, followed by o, followed by an optional u, followed by r.”
+
+"$"
+means that it should end with eg shawn$ means that it must end with n
+
+The Other Quantifiers: ‘+’ and ‘*’
+Like the question mark, the ‘+’ (plus) and ‘*’ (star) metacharacters affect the number of times the preceding character can appear in the expression (with ‘?’ the preceding character could appear 0 or 1 times). The metacharacter ‘+’ matches one or more of the immediately preceding item, while ‘*’ matches any number of the preceding item, including 0
+
+The Interval Quantifier: ‘{}’
+The ‘{min, max}’ metasequence allows you to specify the number of times a particular item can match by providing your own minimum and maximum. The regex go{1,5}al would limit our previous example to matching between one and five o’s. The sequence {0,1} is identical to a question mark.
+
+The Escape Character: ‘\’
+The ‘\’ metacharacter (backslash) is used to escape metacharacters that have special meaning so you can match them in patterns. For example, if you would like to match the ‘?’ or ‘\’ characters, you can precede them with a backslash, which removes their meaning: ‘\?’ or ‘\\’.
+
+Using Parenthesis for Matching: ‘()’
+Most regular expression tools will allow you to capture a particular subset of an expression with parenthesis. I could match the domain portion of a URL by using an expression like http://([^/]+). Let’s break this expression down into it’s components to see how it works.
+
+The beginning of the expression is fairly straightforward: it matches the sequence “h - t - t - p - : - / - /”. This initial sequence is followed by parenthesis, which are used to capture the characters that match the subexpression they surround. In this case the subexpression is ‘[^/]+’, which matches any character except for ‘/’ one or more times. For a URL like http://immike.net/blog/Some-blog-post, ‘immike.net’ will be captured by the parenthesis.
+
+
+character class
+[] example gr[ea]y - so it can either be grey or gray
+
+EXAMPLES
+Alphanumeric characters (letters and numbers)
+The underscore character (_)
+We’ll also want to enforce a 3 character minimum and a 16 character maximum length. Here’s the regular expression that matches this fairly standard set of criteria:
+
+/[a-zA-Z0-9_]{3,16}/
+So what’s missing? As it stands our regex will match anywhere within a string. It won’t just match ‘mike_84′, it will also match any ‘%! mike_84&’, which contains several characters we don’t want. What we need are anchors, the ^ (caret) and $ (dollar) characters will anchor our regex to the beginning and end of the string, ensuring that the whole username meets our requirements and not just a portion of it.
+
+So our revised regex will look like this:
+
+/^[a-zA-Z0-9_]{3,16}$/
+
+Matching an XHTML/XML tag
+Matching an XML or XHTML tag can be extremely useful if you’re scraping a website for data, or trying to quickly extract information from an XML document. A simple regex to accomplish this sort of extraction follows this form (the word ‘tag’ should be replaced with whatever tag you are looking for):
+
+{<tag[^>]*>(.*?)</tag>}
+The question mark following the star turns the start into a lazy quantifier. By default, quantifiers are greedy, meaning they’ll consume as much of the input text as they can. Lazy quantifiers, by contrast, will match as little of the input text as they can
+
 0x06. Regular expression
 Regex
 DevOps
