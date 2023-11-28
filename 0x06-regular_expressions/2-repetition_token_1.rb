@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
-
-puts ARGV[0].scan(/hb{,3}tn/).join
+#only have a maximum of 1'b' hence u can use ?
+puts ARGV[0].scan(/hb?tn/).join
