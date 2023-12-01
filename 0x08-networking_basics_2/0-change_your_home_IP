@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#script is updating IP addresses of hostfile for
+#localhost to 12.0.0.2 and
+#facebook.com to 8.8.8.8
+#we are using docker hence the format used below
+
+cp /etc/hosts ~/hosts.new
+echo "127.0.0.2	localhost" > ~/hosts.new
+echo "8.8.8.8	facebook.com" >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
