@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#if no arg the print out a message,else ping the IP address
+#$1 is the first argument that is the IP address inputted
+#ping is used check whether a device ison a certain network
+#ICMP is used to test and show any errors
+
+if [ $# -eq 0 ]
+then
+	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+else
+	ping -c 5 "$1"
+fi
