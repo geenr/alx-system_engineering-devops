@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#-l -listens only for an incoming connection
+#script listens to an incoming connection from port 98
+
+nc -l localhost 98
