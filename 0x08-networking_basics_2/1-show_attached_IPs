@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #script only lists IPv4 addresses
-#-Eo - is for removing the first 10 char so that only number are seen
+#cut - is for removing the first 5 char so that only number are seen
+#-Eo - use extended regex
 
-ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 11-
+ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 6-
