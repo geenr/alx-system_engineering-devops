@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-#a script that prints out the socket netstat -l
-#and the PID using netstat -p
-#the socket is the IP plus its port
-
-netstat -lp --program
