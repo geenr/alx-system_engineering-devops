@@ -5,4 +5,4 @@ so we use \d - which stands for only digit numbers it same as [0-9]
 we start by setting the range {10,10}
 the plus sign at the end is to enable recurring numbers eg 999
 """
-puts ARGV[0].scan(/\d{10,10}/).join
+puts ARGV[0].scan(/^\d{10,10}$/).join
