@@ -21,3 +21,5 @@ Application Layer* ----- Data        Application specific fields
 Transport Layer    ----- Segments    src & dst port numbers (host & service)
 Internet Layer     ----- Datagrams   src & dst ip addresses
 Link Layer+        ----- Frames      src & dst mac addresses
+netstat - helps to print out all sorts of connections eg listening, non listening, sockets etc
+the link for netstat is as shown below https://www.adminschoice.com/netstat-10-most-common-usage-with-examples
