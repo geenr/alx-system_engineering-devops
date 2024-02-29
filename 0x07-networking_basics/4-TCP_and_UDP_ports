@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#The Netstat with the -l extension is for showing
+#Listening Programs only.
+#the --program help shows the PID and program name
+
+netstat -l --program
