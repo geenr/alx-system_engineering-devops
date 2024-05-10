@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 """
-it must start with h ans end with n so we use
+we must start with h ans end with n so we use
 ^\Ah and also n\Z
 then it must have only 1 character at the center
 """
