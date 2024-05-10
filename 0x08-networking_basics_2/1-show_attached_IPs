@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-#Ifconfig is used to Display all active networks both ipv4 and ipv6.
-#Cut - is used to only Display what is selected in this case the Address only
+#Ifconfig is used to Display all active networks both ipv4 and ipv6
+#Cut - we use it to only Display what is selected in this case the Address only
 # cut -b 6- removes the first 6 characters to only show the Address
 
 ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 6-
