@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# script that creates RSA key pairs with private key name school
+# -f to reename the private key to school
+# -b to set the size to 4096
+# -N to protect the key with betty
+ssh-keygen -f school -b 4096 -N betty
