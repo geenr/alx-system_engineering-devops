@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# this script installs nginx on my webserver
+# Nginx where it should be listening on port 80
+# Serve a page that would return a Hello World string
+# the -y extension on sudo command is for saying yes on every question
+
+echo -e "Updating and installing Nginx.\n"
+sudo apt-get update -y -qq && \
+	 sudo apt-get install nginx -y
+
+echo -e "\nSetting up some minor stuff.\n"
+
+sudo service nginx start
+
+# allows nginx on firewall
+sudo ufw allow 'Nginx HTTP'
+
+# Give the user ownership to the files
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chmod -R 755 /var/www
+
+# we backup the index which is default
+cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
+
+echo -e "Hello World!" | dd status=none of=/var/www/html/index.nginx-debian.html
+
+# restart nginx
+sudo service nginx restart
+
+echo -e "\nCompleted. ✅\n"
